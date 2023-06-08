@@ -8,12 +8,14 @@
   .photo {
     position: relative;
     padding: 80% 10px 0 10px;
+
     background: {
       color: #f4f5f7;
       size: contain;
       position: center;
       repeat: no-repeat;
     }
+
     overflow: hidden;
     align-items: flex-end;
 
@@ -74,5 +76,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .outlines {
+
+      .favorite {
+        color: $primary;
+        margin: 0 5px 0 0;
+
+        &>svg {
+          scale: 1.2;
+        }
+      }
+
+      .compare {
+        color: $primary;
+
+        &>svg {
+          scale: 1.2;
+        }
+      }
+    }
   }
 }
