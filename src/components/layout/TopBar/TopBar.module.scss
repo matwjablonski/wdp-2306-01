@@ -19,6 +19,7 @@
         &:hover {
           color: $primary;
           text-decoration: none;
+          animation: animation-pulse-text $animation-time-text $animation-iteration-count;
         }
       }
     }
