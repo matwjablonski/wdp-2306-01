@@ -78,22 +78,16 @@
     align-items: center;
 
     .outlines {
+      :nth-child(1) {
+        margin-right: 3px;
+      }
 
       .favorite {
         color: $primary;
-        margin: 0 5px 0 0;
-
-        &>svg {
-          scale: 1.2;
-        }
       }
 
       .compare {
         color: $primary;
-
-        &>svg {
-          scale: 1.2;
-        }
       }
     }
   }
