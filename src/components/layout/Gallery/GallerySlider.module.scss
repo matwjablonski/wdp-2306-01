@@ -136,7 +136,7 @@
       repeat: no-repeat;
     }
 
-    background-color: rgba(202, 201, 191, 0.8);
+    background-color: $gallery-product-background;
     background-blend-mode: soft-light;
 
     &:hover,
@@ -208,8 +208,8 @@
   white-space: nowrap;
   width: fit-content;
   padding: 5px;
-  background-color: $text-color;
-  color: #fff;
+  background-color: $gallery-text-color;
+  color: $gallery-text-color;
   text-align: center;
   position: absolute;
   z-index: 1;
@@ -226,7 +226,7 @@
       width: 0;
       height: 0;
       border-top: 13px solid transparent;
-      border-right: 26px solid $text-color;
+      border-right: 26px solid $gallery-text-color;
       border-bottom: 13px solid transparent;
       z-index: -1;
     }
@@ -244,7 +244,7 @@
       width: 0;
       height: 0;
       border-top: 13px solid transparent;
-      border-right: 26px solid $text-color;
+      border-right: 26px solid $gallery-text-color;
       border-bottom: 13px solid transparent;
       z-index: -1;
     }
@@ -262,7 +262,7 @@
       width: 0;
       height: 0;
       border-top: 13px solid transparent;
-      border-right: 26px solid $text-color;
+      border-right: 26px solid $gallery-text-color;
       border-bottom: 13px solid transparent;
       z-index: -1;
     }
@@ -280,7 +280,7 @@
       width: 0;
       height: 0;
       border-top: 13px solid transparent;
-      border-right: 26px solid $text-color;
+      border-right: 26px solid $gallery-text-color;
       border-bottom: 13px solid transparent;
       z-index: -1;
     }

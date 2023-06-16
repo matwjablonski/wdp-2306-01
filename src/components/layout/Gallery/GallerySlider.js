@@ -13,7 +13,6 @@ import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons'
 import { useSelector } from 'react-redux';
 import { getAll } from '../../../redux/productsRedux';
 import Button from '../../common/Button/Button';
-import clsx from 'clsx';
 
 const GallerySlider = () => {
   const topSellers = useSelector(getAll);
@@ -43,7 +42,7 @@ const GallerySlider = () => {
           backgroundSize: 'cover',
         }}
       >
-        <div className={clsx(styles.buttons, styles.tooltip)}>
+        <div className='${styles.buttons} ${styles.tooltip}'>
           <Button variant='outline'>
             <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
           </Button>
