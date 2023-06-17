@@ -16,6 +16,8 @@ $darker-solitude-white: #e0e3ed;
 $orange: #d58e32;          
 $transparent: transparent;
 $box-shadow: rgba(1, 2, 2, 0.2);
+$green: #87c037;
+$creamy-pink: #ffc2cd;
 
 // Button
 
@@ -104,8 +106,21 @@ $header-topbar-bg: $gray;
 $header-link: $pure-white;
 $header-link-hover: $orange;
 
+// Gallery
+
+$gallery-background: $pure-white;
+$gallery-border: $light-gray;
+$gallery-text-main: $dark-gray;
+$gallery-button: $green;
+$gallery-product-background:$mist-gray;
+$gallery-text-color: $black-gray;
+$gallery-tooltip-text: $pure-white;
+$gallery-categories-top-border: $orange;
+
 $primary: #d58e32;
 
-$text-color: #2a2a2a;
-
 $form-border-color: #292929;
+
+$creamy-pink: #ffc2cd;
+
+$text-color: $black-gray;
