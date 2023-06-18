@@ -52,7 +52,7 @@
   }
 
   h1:first-of-type {
-    color: $green;
+    color: $gallery-price-color;
   }
 
   h1:nth-of-type(2) {
@@ -60,7 +60,7 @@
   }
 
   button {
-    background-color: $green;
+    background-color: $gallery-button;
     border: none;
     border-radius: 5%;
     height: 55px;
