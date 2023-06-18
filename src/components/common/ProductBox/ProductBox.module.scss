@@ -5,6 +5,12 @@
   border: 1px solid $productbox-border;
   margin-bottom: 2rem;
 
+  .buttons {
+    visibility: hidden;
+    display: flex;
+    justify-content: space-between;
+  }
+
   .photo {
     position: relative;
     background: {
@@ -32,11 +38,6 @@
       color: $productbox-sale-text;
       padding: 30px 15px 5px 15px;
     }
-
-    .buttons {
-      display: flex;
-      justify-content: space-between;
-    }
   }
 
   .content {
@@ -48,13 +49,6 @@
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 1px;
-    }
-
-    .stars {
-      a {
-        text-decoration: none;
-        color: $productbox-stars-border;
-      }
     }
   }
 
@@ -79,5 +73,35 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .oldPrice {
+    text-decoration: line-through;
+    color: $dark-gray;
+    text-decoration-color: $pure-black;
+  }
+
+
+  &:hover {
+    .buttons {
+      visibility: visible;
+    }
+    .price a {
+      background-color: $primary;
+    }
+  }
+}
+
+@media (max-width: 577px) {
+  .root {
+    margin: 15px auto;
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 578px) and (max-width: 991px) {
+  .root {
+    margin: 15px auto;
+    max-width: 400px;
   }
 }
