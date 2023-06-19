@@ -1,147 +1,172 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  border: 1px solid $productsearch-border-color;
-  display: inline-flex;
-  height: 45px;
-  color: $productsearch-text-color;
-  min-height: 45px;
-  display: flex;
-  flex-direction: column;
+  box-shadow: 2px 3.464px 6px $menubar-menu-box-shadow;
+  background-color: $menubar-bg;
 
-  > * {
-    height: 35px;
+  :global(.container)> :global(.row) {
+    min-height: 84px;
+    padding: 20px 0;
   }
 
-  .category {
+  .menu {
     display: flex;
+    align-self: stretch;
     align-items: center;
-    position: relative;
-    min-width: 211px;
-    box-sizing: border-box;
-    cursor: pointer;
-    order: 2;
 
-    .icon:first-child {
-      color: $productsearch-border-icon;
-      position: absolute;
-      left: 10px;
-      z-index: 0;
-      font-size: 22px;
-    }
-
-    .icon:last-child {
-      position: absolute;
-      right: 10px;
-      z-index: 0;
-      transition: $basic-transition;
-    }
-
-    .selected {
-      background-color: $productsearch-border-select-bg;
-      padding: 5px 30px 5px 35px;
-    }
-
-    .dropdown {
+    .navLinks {
       margin: 0;
       padding: 0;
-      background-color: $productsearch-border-select-menu-bg;
-      position: relative;
-      z-index: 99;
-      list-style-type: none;
-      position: absolute;
-      left: 50%;
-      top: 100%;
-      transform: translateX(-50%);
-      border: 0px solid black;
-      width: calc(100% + 2px);
-      overflow: hidden;
-      max-height: 0;
-      transition: $basic-transition;
+      display: flex;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      right: 0;
+      flex-direction: column;
+      background-color: $menubar-bg;
+      width: 0;
+      height: 100vh;
+      align-items: flex-end;
+      justify-content: center;
+      transition: width .25s ease;
 
       li {
-        padding: 5px 30px 5px 35px;
-        cursor: pointer;
-        transition: $basic-transition;
+        list-style: none;
+        display: flex;
+        align-items: stretch;
+        width: 100%;
       }
-
-      li:hover {
-        background-color: $primary;
-        color: $pure-white;
-      }
-    }
-
-    &:hover {
-      .dropdown {
-        max-height: 172px;
-        border: 1px solid black;
-        background-color: $productsearch-border-select-menu-bg;
-        z-index: 99;
-        transform: translateX(-50%);
-
-        &:hover {
-          display: block;
-        }
-      }
-
-      .icon:last-child {
-          transform: rotate(180deg);
-
-        &:hover {
-          ul {
-            display: block;
-          }
-        }
+      li > * {
+        width: 100%;
       }
     }
+    .xmark {
+      display: none;
+    }
 
-    .searchField {
+    .navLinks.open {
+      width: 80vw;
+      border-left: 1px solid $menubar-menu-border-dark;
+
+      .xmark {
+        display: block;
+        padding: 0 20px 10px 0;
+      }
+      .xmark svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .hamburger svg {
+      width: 20px;
+      height: 20px;
+    }
+    a {
+      color: $menubar-menu-text;
+      text-transform: uppercase;
+      font-size: 12px;
+      padding: 1rem;
+      text-decoration: none;
       display: flex;
       align-items: center;
-      position: relative;
-      border-bottom: 1px solid $productsearch-border-color;
-      width: 100%;
-
-      input {
-        border: 0;
-        padding-left: 10px;
-        font-size: 14px;
-        outline: none;
-        width: 100%;
-
-        &::placeholder {
-          color: $productsearch-border-placeholder;
-        }
+      border-top: 4px solid $menubar-menu-border;
+      font-weight: 500;
+      letter-spacing: 1px;
+      &:hover,
+      &.active {
+        background-color: $menubar-menu-hover-bg;
+        color: $menubar-menu-hover-text;
+        border-color: $menubar-menu-hover-border;
       }
-
-      button {
-        border: 0;
-        background-color: $productsearch-border-button-bg;
-        outline: none;
+      &.active {
+        border-color: $menubar-menu-hover-border-active;
       }
     }
+  }
+  .search {
+    margin-bottom: 20px;
   }
 }
 
 @media (min-width: 768px) {
   .root {
-    min-height: 35px;
-    flex-direction: row;
-    align-items: center;
-    display: flex;
-
-    .category {
-      border-right: 1px solid $productsearch-border-color;
-      order: 0;
+    .hamburger {
+      display: none;
     }
 
-    .searchField {
-      border-bottom: 0 solid $productsearch-border-color;
+    .menu {
+      margin: 0 auto;
 
-      button {
-        border: 0;
-        background-color: $productsearch-border-button-bg;
-        outline: none;
+      .navLinks {
+        position: static;
+        flex-direction: row;
+        background-color: $menubar-bg;
+        width: 100%;
+        height: 50px;
+        align-items: center;
+        transition: $basic-transition;
+        border-left: 0 solid $menubar-menu-border-dark;
+      }
+    }
+
+    .search {
+      max-width: 582px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0;
+      margin-top: 20px;
+      order: 2;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .root {
+    .menu {
+      margin: 0 auto;
+
+      .navLinks {
+        position: static;
+        flex-direction: row;
+        background-color: $menubar-bg;
+        width: 100%;
+        height: 50px;
+        align-items: center;
+        transition: $basic-transition;
+        border-left: 0 solid $menubar-menu-border-dark;
+      }
+    }
+
+    .search {
+      min-width: 582px;
+      max-width: 582px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0;
+      margin-top: 20px;
+      order: 2;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .root {
+    :global(.container)> :global(.row) {
+      min-height: unset;
+      padding: 0;
+    }
+
+    .search {
+      min-width: unset;
+      max-width: 582px;
+      order: 0;
+      margin-top: 0;
+    }
+
+    .menu {
+      .navLinks {
+        height: 84px;
+        align-items: stretch;
       }
     }
   }
