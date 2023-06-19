@@ -85,39 +85,40 @@
       }
 
       .icon:last-child {
-        transform: rotate(180deg);
+          transform: rotate(180deg);
 
-      &:hover {
-        ul {
-          display: block;
+        &:hover {
+          ul {
+            display: block;
+          }
         }
       }
     }
-  }
 
-  .searchField {
-    display: flex;
-    align-items: center;
-    position: relative;
-    border-bottom: 1px solid $productsearch-border-color;
-    width: 100%;
-
-    input {
-      border: 0;
-      padding-left: 10px;
-      font-size: 14px;
-      outline: none;
+    .searchField {
+      display: flex;
+      align-items: center;
+      position: relative;
+      border-bottom: 1px solid $productsearch-border-color;
       width: 100%;
 
-      &::placeholder {
-        color: $productsearch-border-placeholder;
-      }
-    }
+      input {
+        border: 0;
+        padding-left: 10px;
+        font-size: 14px;
+        outline: none;
+        width: 100%;
 
-    button {
-      border: 0;
-      background-color: $productsearch-border-button-bg;
-      outline: none;
+        &::placeholder {
+          color: $productsearch-border-placeholder;
+        }
+      }
+
+      button {
+        border: 0;
+        background-color: $productsearch-border-button-bg;
+        outline: none;
+      }
     }
   }
 }
