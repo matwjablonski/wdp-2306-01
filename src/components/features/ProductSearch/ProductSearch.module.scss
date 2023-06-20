@@ -7,7 +7,6 @@
   color: $text-color;
 
   .category {
-    border-right: 1px solid $productsearch-border-color;
     display: flex;
     align-items: center;
     position: relative;
@@ -68,12 +67,15 @@
     display: flex;
     align-items: center;
     position: relative;
+    border-bottom: 1px solid $productsearch-border-color;
+    width: 100%;
 
     input {
       border: 0;
       padding-left: 10px;
       font-size: 14px;
       outline: none;
+      width: 100%;
 
       &::placeholder {
         color: $productsearch-border-placeholder;

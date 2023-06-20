@@ -25,6 +25,7 @@ class NewFurniture extends React.Component {
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
 
+
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
@@ -79,6 +80,13 @@ class NewFurniture extends React.Component {
   }
 }
 
+const mapStateToProps = state => {
+  const mode = getActive(state);
+  return {
+    mode: mode,
+  };
+};
+
 NewFurniture.propTypes = {
   children: PropTypes.node,
   categories: PropTypes.arrayOf(
@@ -105,4 +113,4 @@ NewFurniture.defaultProps = {
   products: [],
 };
 
-export default NewFurniture;
+export default connect(mapStateToProps)(NewFurniture);
