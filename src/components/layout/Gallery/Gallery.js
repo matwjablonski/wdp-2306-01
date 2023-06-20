@@ -19,7 +19,7 @@ const Gallery = () => {
               </div>
             </div>
           </div>
-          <div className='col'>
+          <div className={'col'}>
             <div
               className={styles.rightPhoto}
               style={{

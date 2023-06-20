@@ -73,3 +73,9 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .photoInfo, .rightPhoto, .shopNow {
+    visibility: hidden;
+  }
+}

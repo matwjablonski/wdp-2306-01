@@ -6,6 +6,10 @@
   margin-top: 30px;
 }
 
+.gallery {
+  width: 100%;
+}
+
 .categories {
   a {
     color: $gallery-text-main;
@@ -287,3 +291,42 @@
     }
   }
 }
+
+
+@media (max-width: 768px) {
+  .root {
+    .gallery {
+        width: 100%;
+
+        .photo {
+          .backgroundImage {
+          width: 100%;
+          position: relative;
+          z-index: 1;
+          }
+        }
+        .sliderList {
+          .product {
+            height: 75px;
+            width: 75px;
+            margin-left: 5px;
+            margin-right: 5px;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .root {
+    .gallery {
+     width: auto;
+   }
+  } 
+}
+
