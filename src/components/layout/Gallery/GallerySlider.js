@@ -22,7 +22,7 @@ const GallerySlider = () => {
     <div className={styles.root}>
       <div className='container'>
         <div className='row'>
-          <div className={styles.gallery + 'col-12 col-md-6 pl-0'}>
+          <div className={styles.gallery}>
             <div className={'row no-gutters ' + styles.categories}>
               <div className={'col'}>
                 <a href=''>Featured</a>
