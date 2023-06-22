@@ -1,21 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './SearchPage.module.scss';
 import FeatureBoxes from '../FeatureBoxes/FeatureBoxes';
 import Brands from '../../layout/Brands/Brands';
 import { useSelector } from 'react-redux';
 import { getAll } from '../../../redux/productsRedux';
-import { useParams } from 'react-router-dom';
 import ProductBox from '../../common/ProductBox/ProductBox';
 
 const SearchPage = () => {
+
+  const [searchResult, setSearchResult] = useState('');
+
   const products = useSelector(state => getAll(state));
-  const searchResult = useParams().searchResult;
   const filtered = [];
   for (const product of products) {
     if (product.name.toLowerCase().includes(searchResult)) {
       filtered.push(product);
     }
   }
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    const searchPhrase = hash.substring(9, hash.length);
+    setSearchResult(searchPhrase);
+  }, []);
 
   return (
     <div>
